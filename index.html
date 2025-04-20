@@ -15,17 +15,16 @@
     </style>
   </head>
   <body>
-    <h1>Your Magic Number</h1>
+    <h1>Your magic number:</h1>
     <h2 id="ip">Hold on just a sec</h2>
-  
     <script>
       let echolog = {};
       // here is the fun
-      fetch("https://wtfismyip.com/json")
+      fetch("https://api.ipify.org/?format=json")
         .then((response) => response.json())
         .then((data) => {
           let echolog = {
-            ipAddress: data.YourFuckingIPAddress,
+            ipAddress: data.ip,
           };
 
           var ip = document.getElementById("ip")
